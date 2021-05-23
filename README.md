@@ -2,6 +2,8 @@
 
 The goal is to create an application wherein the user can send a series of commands to an imaginary toy robot that can be placed in a square table top.
 
+![Alt text](public/app-screen.png?raw=true "Screenshot")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running version
