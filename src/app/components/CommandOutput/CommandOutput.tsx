@@ -19,11 +19,15 @@ class CommandOutput extends PureComponent<Props, State> {
     }
 
     ref = React.createRef<HTMLDivElement>()
+    timeout: NodeJS.Timeout | null = null
 
     componentDidUpdate(prevProps: Props): void {
         if (prevProps.reports !== this.props.reports) {
             this.setState({ hideNewTag: false }, () => {
-                setTimeout(() => this.setState({ hideNewTag: true }), 3000)
+                if (this.timeout) {
+                    clearTimeout(this.timeout)
+                }
+                this.timeout = setTimeout(() => this.setState({ hideNewTag: true }), 3000)
             })
 
             if (this.ref) {
