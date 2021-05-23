@@ -72,6 +72,7 @@ const Caption = styled.div`
 
 const CommandBadge = styled.div`
     font-size: 14px;
+    min-width: 70px;
     text-transform: uppercase;
     background: #ffffff;
     border: 1px solid #666;
@@ -97,10 +98,15 @@ const CommandList = styled.ul`
 `
 
 const ExampleBlock = styled.div`
-    background: #a8cef491;
+    background: #505050;
     border-radius: 6px;
     padding: 12px;
     margin-top: 20px;
+
+    li {
+        font-size: 14px;
+        color: #eee;
+    }
 `
 
 const FormWrapper = styled.div`

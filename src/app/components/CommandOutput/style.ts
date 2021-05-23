@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Output = styled.div`
     height: 100%;
-    border: 1px solid #ccc;
+    background: #505050;
     padding: 0 12px 12px;
     border-radius: 4px;
     width: 90%;
@@ -12,7 +12,7 @@ const Output = styled.div`
 
 const OutputTitle = styled.h6`
     margin: 12px 0;
-    color: #444;
+    color: #eee;
 `
 
 const OutputBody = styled.div`
@@ -28,12 +28,12 @@ const OutputBody = styled.div`
 const OutputItem = styled.div`
     margin-bottom: 12px;
     font-size: 14px;
-    background: #c6f0c7;
+    background: #333333;
     padding: 4px 4px 4px 8px;
     border-radius: 24px;
     display: flex;
     align-items: center;
-    color: #169419;
+    color: #b7b7b7;
     justify-content: space-between;
 `
 
