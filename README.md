@@ -11,7 +11,6 @@ NPM: 6.14.10
 
 ## Running the project
 
-Clone the repository\
 npm install\
 npm start
 
