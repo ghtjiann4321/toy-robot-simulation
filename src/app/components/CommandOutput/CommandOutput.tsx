@@ -18,11 +18,17 @@ class CommandOutput extends PureComponent<Props, State> {
         }
     }
 
+    ref = React.createRef<HTMLDivElement>()
+
     componentDidUpdate(prevProps: Props): void {
         if (prevProps.reports !== this.props.reports) {
             this.setState({ hideNewTag: false }, () => {
                 setTimeout(() => this.setState({ hideNewTag: true }), 3000)
             })
+
+            if (this.ref) {
+                this.ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
         }
     }
 
@@ -31,15 +37,17 @@ class CommandOutput extends PureComponent<Props, State> {
             <Output>
                 <OutputTitle>Output: </OutputTitle>
                 <OutputBody>
-                    {this.props.reports.map((report, index) => (
-                        <OutputItem key={index} className={index === 0 ? 'new' : ''}>
-                            <OutputItemText>
-                                <OutputRobot src="./robot-dark.svg" alt="robot icon" />
-                                {report}
-                            </OutputItemText>
-                            {index === 0 && !this.state.hideNewTag && <NewTag>NEW</NewTag>}
-                        </OutputItem>
-                    ))}
+                    <div ref={this.ref}>
+                        {this.props.reports.map((report, index) => (
+                            <OutputItem key={index} className={index === 0 ? 'new' : ''}>
+                                <OutputItemText>
+                                    <OutputRobot src="./robot-dark.svg" alt="robot icon" />
+                                    {report}
+                                </OutputItemText>
+                                {index === 0 && !this.state.hideNewTag && <NewTag>NEW</NewTag>}
+                            </OutputItem>
+                        ))}
+                    </div>
                 </OutputBody>
             </Output>
         )
