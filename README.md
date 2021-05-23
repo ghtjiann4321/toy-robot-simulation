@@ -20,4 +20,4 @@ npm test
 
 ## Build the project
 
-npm build
+npm run build
